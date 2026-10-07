@@ -2,15 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1769d1"><title>مذكرتي AI V3</title>
+<meta name="theme-color" content="#1769d1"><title>مذكرتي AI V4</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#eef3f9;color:#14213d;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}.app{max-width:560px;margin:auto;min-height:100vh;background:#f7f9fc}.top{background:linear-gradient(135deg,#0d4f9e,#237be5);color:#fff;padding:20px 18px 24px;border-radius:0 0 28px 28px}.brand{display:flex;gap:11px;align-items:center}.logo{width:50px;height:50px;background:white;color:#1769d1;border-radius:16px;display:grid;place-items:center;font-size:26px}.brand h1{margin:0;font-size:22px}.brand small{opacity:.9}.content{padding:16px}.hero,.card{background:#fff;border-radius:20px;padding:17px;box-shadow:0 5px 18px #16345b10;margin-bottom:13px}.hero h2{margin:0 0 7px}.hero p{margin:0;color:#64748b;line-height:1.7;font-size:14px}.primary{width:100%;padding:15px;border:0;border-radius:15px;background:#1769d1;color:#fff;font-weight:800;margin-top:14px;font-size:15px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tile{background:#fff;border:0;border-radius:18px;padding:18px;text-align:right;box-shadow:0 4px 14px #16345b0d}.tile span{font-size:26px}.tile b{display:block;margin-top:8px}.header{background:#1769d1;color:#fff;padding:15px 18px;display:flex;align-items:center;gap:12px;font-weight:800;position:sticky;top:0;z-index:5}.back{background:none;border:0;color:#fff;font-size:27px}.hidden{display:none}label{display:block;font-size:13px;font-weight:800;margin:12px 0 6px;color:#334155}select,input,textarea{width:100%;padding:12px;border:1px solid #dbe4ef;border-radius:12px;background:#fbfdff;font:inherit}textarea{min-height:85px;resize:vertical}.row,.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.info{padding:11px 13px;background:#eef6ff;border-radius:12px;color:#155eac;font-size:13px;line-height:1.7;margin-top:12px}.note{line-height:1.85}.note h2{text-align:center}.note h3{color:#1769d1;border-bottom:1px solid #e3ebf5;padding-bottom:5px;font-size:15px}.note p,.note li{font-size:14px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.secondary{padding:13px;border:0;border-radius:13px;background:#e9f2ff;color:#125db6;font-weight:800}.green{background:#eaf9f1;color:#16804b}.small{font-size:12px;color:#64748b}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{background:#eef4fb;padding:7px 10px;border-radius:20px;font-size:12px}.section-title{font-weight:900;margin:18px 0 4px}@media print{.no-print,.top,.header,.actions{display:none!important}.app{max-width:none}.content{padding:0}.card{box-shadow:none}}
 </style></head>
 <body><div class="app">
-<div id="home"><div class="top"><div class="brand"><div class="logo">📘</div><div><h1>مذكرتي AI</h1><small>مولّد المذكرات الآلية — V3</small></div></div></div>
+<div id="home"><div class="top"><div class="brand"><div class="logo">📘</div><div><h1>مذكرتي AI</h1><small>مولّد المذكرات الآلية — V4</small></div></div></div>
 <div class="content"><div class="hero"><h2>مذكرة فيزياء جزائرية 🇩🇿</h2><p>نسخة مطوّرة لإنشاء مذكرة منظمة، قابلة للتعديل والحفظ والطباعة، مع معلومات الأستاذ والقسم والحصة.</p><button class="primary" onclick="openForm()">✨ إنشاء مذكرة</button></div>
 <div class="grid"><button class="tile" onclick="openForm()"><span>⚡</span><b>توليد سريع</b><small>1 متوسط → 4 متوسط</small></button><button class="tile" onclick="showSaved()"><span>📂</span><b>مذكراتي</b><small>محفوظة على الجهاز</small></button></div>
-<div class="card" style="margin-top:14px"><b>المسار الجديد</b><div class="chips" style="margin-top:9px"><span class="chip">1 متوسط</span><span class="chip">2 متوسط</span><span class="chip">3 متوسط</span><span class="chip">4 متوسط</span></div></div></div></div>
+<div class="card" style="margin-top:14px"><b>V4 — قاعدة 4 متوسط</b><p class="small" style="line-height:1.7">الظواهر الكهربائية • المادة وتحولاتها • الظواهر الميكانيكية • الظواهر الضوئية</p></div><div class="card" style="margin-top:14px"><b>المسار الجديد</b><div class="chips" style="margin-top:9px"><span class="chip">1 متوسط</span><span class="chip">2 متوسط</span><span class="chip">3 متوسط</span><span class="chip">4 متوسط</span></div></div></div></div>
 
 <div id="form" class="hidden"><div class="header"><button class="back" onclick="goHome()">‹</button> إنشاء مذكرة فيزياء</div><div class="content"><div class="card">
 <div class="section-title">بيانات المؤسسة والأستاذ</div>
@@ -23,7 +23,7 @@
 <label>③ الدرس</label><select id="lesson"><option value="">اختر الوحدة أولًا</option></select>
 <div class="row"><div><label>نوع الحصة</label><select id="type"><option>درس</option><option>نشاط تجريبي</option><option>أعمال تطبيقية</option><option>حل وضعية / تمرين</option><option>تقويم</option><option>معالجة</option><option>مراجعة</option></select></div><div><label>المدة</label><select id="duration"><option>1 ساعة</option><option>1 ساعة و30 دقيقة</option><option>ساعتان</option></select></div></div>
 <label>تعليمات خاصة (اختياري)</label><textarea id="extra" placeholder="مثال: ركّز على التجربة، أو أضف تمرينًا تحضيريًا لـ BEM..."></textarea>
-<div class="info">💡 قاعدة الدروس في هذه النسخة موسّعة كبداية. سنواصل تدقيقها وتنظيمها وفق الوثائق الرسمية قبل اعتمادها كقاعدة نهائية.</div>
+<div class="info">📌 قاعدة 4 متوسط في V4 مبنية على موارد برنامج العلوم الفيزيائية والتكنولوجيا للسنة الرابعة متوسط، مع تنظيم الدروس حسب الميادين والموارد المعرفية. راجع وثائق مؤسستك عند وجود تحديث رسمي جديد.</div>
 <button class="primary" onclick="generate()">🤖 توليد المذكرة كاملة</button>
 </div></div></div>
 
@@ -36,8 +36,106 @@ const db={
 "1 متوسط":{"المادة وخواصها":["حالات المادة","تغيرات الحالة الفيزيائية","قياس الكتلة والحجم","الكثافة"],"الظواهر الكهربائية":["الدارات الكهربائية","تركيب الدارات الكهربائية على التسلسل والتفرع","الدارة المستقصرة","ربط الأعمدة"],"الظواهر الضوئية والفلكية":["مصادر الضوء","انتشار الضوء","الظل والظليل","القمر ومراحله"]},
 "2 متوسط":{"المادة وتحولاتها":["التحول الفيزيائي","التحول الكيميائي","النموذج المجهري للتحول الكيميائي","الاحتراق","الرموز والصيغ الكيميائية"],"الظواهر الكهربائية":["الدارة الكهربائية","التيار الكهربائي","التوتر الكهربائي","التوصيل على التسلسل والتفرع"],"الظواهر الميكانيكية":["الحركة والسكون","القوى وتأثيراتها","الوزن والكتلة"],"الضوء":["انتشار الضوء","الأجسام المضيئة والأجسام المضيئة بالانعكاس"]},
 "3 متوسط":{"المادة وتحولاتها":["الذرة والجزيئات","التحولات الكيميائية","المعادلة الكيميائية","موازنة المعادلات الكيميائية"],"الظواهر الكهربائية":["التيار الكهربائي المستمر","التوتر الكهربائي","قانون أوم","الاستطاعة الكهربائية"],"الظواهر الميكانيكية":["القوة والحركة","تمثيل القوة","التوازن"],"الطاقة":["أشكال الطاقة","تحويلات الطاقة","السلسلة الطاقوية"]},
-"4 متوسط":{"الظواهر الكهربائية":["التيار الكهربائي والتوتر الكهربائي","الربط على التوالي والتوازي","قانون أوم","الاستطاعة الكهربائية","الطاقة الكهربائية والاستهلاك"],"المادة وتحولاتها":["التحول الكيميائي","المعادلة الكيميائية","الاحتراق","حفظ الذرات","المعادلات الكيميائية"],"الظواهر الميكانيكية":["الحركة","القوة","الوزن","التوازن"],"الظواهر الضوئية":["الضوء","العدسات","الصورة","تطبيقات الضوء"]}};
-let current={};const $=id=>document.getElementById(id);
+"4 متوسط":{
+"الظواهر الكهربائية":["الشحنة الكهربائية","النموذج المبسط للذرة","التيار الكهربائي المتناوب","الأمن الكهربائي"],
+"المادة وتحولاتها":["الشاردة والمحلول الشاردي","التحليل الكهربائي البسيط لمحلول مائي شاردي","التحولات الكيميائية في المحاليل الشاردية"],
+"الظواهر الميكانيكية":["المقاربة الأولية للقوة","فعل الأرض في جملة ميكانيكية","توازن جسم صلب خاضع لعدة قوى","دافعة أرخميدس في السوائل"],
+"الظواهر الضوئية":["اختلاف أبعاد منظر الشيء حسب زوايا النظر","صورة جسم معطاة بمرآة مستوية","قانونا الانعكاس","مجال المرآة المستوية"]
+}};
+
+const lessonData4={
+"الشحنة الكهربائية":{
+competency:"يفسر الأفعال المتبادلة بين الأجسام المشحونة كهربائيا باستعمال مفهوم الشحنة الكهربائية ونموذج مبسط للذرة.",
+objectives:["التعرف على ظاهرة التكهرب وطرق التكهرب: بالدلك واللمس والتأثير.","التمييز بين الشحنة الموجبة والسالبة والتجاذب والتنافر.","التمييز بين الناقل والعازل كهربائيا.","توظيف مبدأ انحفاظ الشحنة في تفسير التكهرب."],
+prereq:"مفاهيم الدارة الكهربائية البسيطة، النواقل والعوازل، وبعض التعلمات السابقة حول المادة.",
+activity:"تجارب التكهرب بالدلك والتأثير، وملاحظة التجاذب والتنافر بين أجسام مشحونة."
+},
+"النموذج المبسط للذرة":{
+competency:"يوظف النموذج المبسط للذرة لتفسير التكهرب والتعادل الكهربائي.",
+objectives:["التعرف على النواة والإلكترونات.","تفسير شحن الجسم الموجب أو السالب بانتقال الإلكترونات.","تفسير التعادل الكهربائي للذرة والجسم غير المشحون.","ربط التكهرب بالنموذج المبسط للذرة."],
+prereq:"الشحنة الكهربائية وطرق التكهرب.",
+activity:"تحليل وثيقة أو نموذج مبسط للذرة وربط انتقال الإلكترونات بظواهر التكهرب."
+},
+"التيار الكهربائي المتناوب":{
+competency:"يوظف مفهوم التيار الكهربائي المتناوب وخصائص التوتر المتناوب في تفسير الاستعمالات اليومية.",
+objectives:["التعرف على مبدأ إنتاج التوتر المتناوب.","التمييز بين التيار المستمر والمتناوب.","تحديد القيمة الأعظمية والدور والتواتر والتوتر المنتج.","استغلال راسم الاهتزاز المهبطي عند توفره."],
+prereq:"الدارة الكهربائية، التوتر والتيار الكهربائي.",
+activity:"إنتاج توتر متناوب باستعمال منوب وملاحظة الإشارة، ثم استخراج خصائصها."
+},
+"الأمن الكهربائي":{
+competency:"يتخذ الاحتياطات الأمنية الضرورية عند التعامل مع الأجهزة والمنشآت الكهربائية المنزلية.",
+objectives:["التمييز بين الطور والحيادي والأرضي.","تفسير دور المنصهرة والقاطع والتوصيل الأرضي.","التعرف على أخطار الاستقصار والشدة الزائدة.","اقتراح حلول لخلل في مخطط حماية كهربائية."],
+prereq:"التيار والتوتر المتناوبان ومكونات الدارة المنزلية.",
+activity:"تحليل مأخذ القطاع ومخططات حماية، ومحاكاة أعطال على نموذج مخبري آمن."
+},
+"الشاردة والمحلول الشاردي":{
+competency:"يوظف مفهوم الشاردة والمحلول الشاردي لتفسير النقل الكهربائي في المحاليل المائية.",
+objectives:["التمييز بين المحاليل الجزيئية والشاردية.","التمييز بين الشاردة الموجبة والسالبة.","كتابة الصيغة الشاردية للمحلول مع احترام التعادل الكهربائي.","التمييز بين الصيغة الإحصائية والصيغة الشاردية."],
+prereq:"النموذج المبسط للذرة والشحنة الكهربائية.",
+activity:"اختبار ناقلية محاليل مختلفة وملاحظة هجرة الشوارد عند توفر التجهيز."
+},
+"التحليل الكهربائي البسيط لمحلول مائي شاردي":{
+competency:"يفسر التحليل الكهربائي البسيط لمحلول شاردي اعتمادا على حركة الشوارد ومبدأي انحفاظ الذرات والشحنة.",
+objectives:["إنجاز تركيب تجريبي للتحليل الكهربائي البسيط.","الكشف عن نواتج التحليل الكهربائي.","تمييز النقل في المعدن عن النقل في المحلول الشاردي.","كتابة المعادلات النصفية ومعادلة التفاعل المنمذج."],
+prereq:"الشاردة والمحلول الشاردي والنقل الكهربائي في المحاليل.",
+activity:"تحليل كهربائي بسيط لمحلول شاردي مناسب، مع احترام قواعد الأمن."
+},
+"التحولات الكيميائية في المحاليل الشاردية":{
+competency:"يمثل التحولات الكيميائية التي تحدث في المحاليل الشاردية بمعادلات تحترم انحفاظ الذرات والشحنة.",
+objectives:["الكشف عن بعض الأنواع والشوارد الكيميائية.","نمذجة تحول حمض مع معدن أو تفاعل محلول ملحي مع معدن.","كتابة المعادلات الكيميائية المناسبة.","احترام قواعد الأمن أثناء التجارب."],
+prereq:"الشوارد، المحاليل الشاردية، والتحليل الكهربائي البسيط.",
+activity:"تجارب مختارة: حمض كلور الماء مع معدن، كبريتات النحاس مع الحديد، أو حمض كلور الماء مع كربونات الكالسيوم."
+},
+"المقاربة الأولية للقوة":{
+competency:"يوظف مفهومي الجملة الميكانيكية والقوة لتحديد الأفعال المتبادلة بين الأجسام.",
+objectives:["تحديد الجملة الميكانيكية والوسط الخارجي.","تصنيف الأفعال الميكانيكية إلى تلامسية وبعدية.","تمثيل الفعل الميكانيكي بشعاع القوة.","تحديد خصائص القوة واستعمال الدينامومتر."],
+prereq:"الحالة الحركية للأجسام وبعض أمثلة الأفعال الميكانيكية.",
+activity:"دراسة جسم مشدود بخيط أو نابض، وجسم على سطح، ومقارنة الأفعال الميكانيكية."
+},
+"فعل الأرض في جملة ميكانيكية":{
+competency:"يمثل فعل الأرض على جسم بالثقل ويستعمل العلاقة بين الثقل والكتلة.",
+objectives:["التعرف على خصائص شعاع الثقل.","تمثيل الثقل بشعاع.","قياس الكتلة والثقل تجريبيا.","استنتاج واستعمال العلاقة P=mg والتمييز بين الكتلة والثقل."],
+prereq:"مفهوم القوة وخصائص شعاعها.",
+activity:"قياس كتل مختلفة وثقلها بميزان وربيعة، ثم دراسة العلاقة بين P و m."
+},
+"توازن جسم صلب خاضع لعدة قوى":{
+competency:"يوظف مفهوم القوة لنمذجة حالات توازن جسم صلب خاضع لقوتين أو لثلاث قوى غير متوازية.",
+objectives:["تحديد وتمثيل القوى المؤثرة على جسم في حالة توازن.","تطبيق شرط توازن جسم خاضع لقوتين.","تطبيق شرط توازن جسم خاضع لثلاث قوى غير متوازية.","تعيين محصلة قوتين وتحليل قوة إلى مركبتين عند الحاجة."],
+prereq:"تمثيل القوى، فعل الأرض، وخصائص شعاع القوة.",
+activity:"تجارب بحلقة خفيفة وخيوط، ودراسة توازن جسم خاضع لقوتين ثم لثلاث قوى."
+},
+"دافعة أرخميدس في السوائل":{
+competency:"يطبق شرط التوازن ويستعمل دافعة أرخميدس لتفسير غوص الأجسام وطفوها.",
+objectives:["تحديد حامل وجهة وشدة ونقطة تأثير دافعة أرخميدس.","تحديد العوامل المؤثرة في شدتها.","تطبيق شرط توازن جسم مغمور أو طاف.","استعمال الدافعة للمقارنة بين طبيعة المواد."],
+prereq:"القوة، الثقل، والتوازن.",
+activity:"قياس الدافعة بربيعة وأجسام مغمورة، ودراسة الطفو باستعمال ماء وسوائل مختلفة."
+},
+"اختلاف أبعاد منظر الشيء حسب زوايا النظر":{
+competency:"يقدر مواقع وأبعاد الأجسام باستعمال زاوية النظر ونموذج الشعاع الضوئي.",
+objectives:["تعريف زاوية النظر.","ربط زاوية النظر بأبعاد الجسم وموضعه.","توظيف طريقة التثليث لتقدير أبعاد أو مسافات.","التمييز بين الرؤية المباشرة والرؤية المنظورية."],
+prereq:"نموذج الشعاع الضوئي ومفاهيم أساسية في القياس والزوايا.",
+activity:"مقارنة منظر جسم من زوايا مختلفة وتقدير موضع أو بعد جسم باستعمال التثليث."
+},
+"صورة جسم معطاة بمرآة مستوية":{
+competency:"يحدد خصائص صورة جسم معطاة بمرآة مستوية باستعمال نموذج الشعاع الضوئي.",
+objectives:["تحديد موضع وأبعاد صورة جسم في مرآة مستوية.","استخراج خصائص الصورة.","استعمال تجربة الشمعتين أو وضعية مماثلة للتحقق التجريبي.","ربط موضع الجسم بموضع صورته."],
+prereq:"الرؤية المباشرة ونموذج الشعاع الضوئي.",
+activity:"تجربة الشمعتين أو تجربة مكافئة لتحديد موضع الصورة وخصائصها."
+},
+"قانونا الانعكاس":{
+competency:"يوظف قانوني الانعكاس لتحديد مسار الأشعة وصورة جسم في مرآة مستوية.",
+objectives:["تحديد السطح العاكس ونقطة الورود والناظم.","تعريف زاوية الورود وزاوية الانعكاس.","صياغة قانوني الانعكاس.","رسم مسار الشعاع المنعكس وصورة نقطة أو جسم."],
+prereq:"الشعاع الضوئي والمرآة المستوية.",
+activity:"تجربة انعكاس الضوء وقياس الزوايا للتحقق من قانوني الانعكاس."
+},
+"مجال المرآة المستوية":{
+competency:"يوظف مجال المرآة المستوية لتوقع إمكانية رؤية جسم وتفسير أثر دوران المرآة.",
+objectives:["تحديد مجال رؤية المرآة هندسيا.","توقع رؤية صورة جسم من عدمها حسب موقع العين.","تحديد أثر دوران المرآة على الشعاع المنعكس.","تفسير تغير مجال الرؤية بدوران المرآة."],
+prereq:"صورة الجسم بالمرآة وقانونا الانعكاس.",
+activity:"استخدام مرآة مستوية في أوضاع مختلفة لتحديد مجال الرؤية ودراسة أثر الدوران."
+}
+};
+let current='';{};const $=id=>document.getElementById(id);
 function hideAll(){["home","form","result","saved"].forEach(x=>$(x).classList.add("hidden"))}
 function goHome(){hideAll();$("home").classList.remove("hidden")}
 function openForm(){hideAll();$("form").classList.remove("hidden");if(!$("date").value)$("date").value=new Date().toISOString().slice(0,10)}
@@ -47,21 +145,27 @@ function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&l
 function generate(){
 let teacher=$("teacher").value,school=$("school").value,className=$("className").value,year=$("year").value,date=$("date").value,level=$("level").value,unit=$("unit").value,lesson=$("lesson").value,type=$("type").value,duration=$("duration").value,extra=$("extra").value;
 if(!level||!unit||!lesson){alert("اختر المستوى والميدان والدرس أولًا.");return}
-current={teacher,school,className,year,date,level,unit,lesson,type,duration,extra};let practical=type==="نشاط تجريبي"||type==="أعمال تطبيقية"||lesson.includes("دارة")||lesson.includes("أوم");
+current={teacher,school,className,year,date,level,unit,lesson,type,duration,extra};
+let spec=(level==="4 متوسط" && lessonData4[lesson])?lessonData4[lesson]:null;
+let competency=spec?.competency||"توظيف المعارف والمهارات المرتبطة بـ «"+lesson+"» في تفسير ظاهرة أو حل وضعية، مع استعمال اللغة والرموز العلمية واحترام خطوات المنهج العلمي.";
+let objectives=spec?.objectives||["تحديد المفاهيم والعناصر الأساسية المرتبطة بالدرس.","استغلال الملاحظات أو النتائج التجريبية لبناء المعرفة.","صياغة الاستنتاجات باستعمال تعبير علمي مناسب.","توظيف التعلمات في وضعية تطبيقية أو تمرين."];
+let prereq=spec?.prereq||"استرجاع التعلمات السابقة ذات الصلة بـ "+unit+" وربطها بالوضعية الجديدة.";
+let activity=spec?.activity||"استغلال وثيقة أو نشاط تجريبي مناسب للدرس، مع تسجيل الملاحظات واستثمار النتائج.";
+let practical=type==="نشاط تجريبي"||type==="أعمال تطبيقية"||lesson.includes("دارة")||lesson.includes("أوم");
 $("note").innerHTML=`<div style="text-align:center"><b>الجمهورية الجزائرية الديمقراطية الشعبية</b><br><b>وزارة التربية الوطنية</b><hr><h2>مذكرة تربوية في العلوم الفيزيائية</h2></div>
 <p><b>الأستاذ:</b> ${esc(teacher)||"................"}　 <b>القسم:</b> ${esc(className)||"................"}<br><b>المؤسسة:</b> ${esc(school)||"................"}<br><b>السنة الدراسية:</b> ${esc(year)||"2026/2027"}　 <b>التاريخ:</b> ${esc(date)||"................"}<br><b>المستوى:</b> ${esc(level)}　 <b>المدة:</b> ${esc(duration)}<br><b>الميدان / الوحدة:</b> ${esc(unit)}<br><b>الدرس:</b> ${esc(lesson)}<br><b>نوع الحصة:</b> ${esc(type)}</p>
-<h3>الكفاءة المستهدفة</h3><p>توظيف المعارف والمهارات المرتبطة بـ «${esc(lesson)}» في تفسير ظاهرة أو حل وضعية، مع استعمال اللغة والرموز العلمية واحترام خطوات المنهج العلمي.</p>
-<h3>الأهداف التعليمية</h3><ul><li>تحديد المفاهيم والعناصر الأساسية المرتبطة بالدرس.</li><li>استغلال الملاحظات أو النتائج التجريبية لبناء المعرفة.</li><li>صياغة الاستنتاجات باستعمال تعبير علمي مناسب.</li><li>توظيف التعلمات في وضعية تطبيقية أو تمرين.</li></ul>
-<h3>المكتسبات القبلية</h3><p>استرجاع التعلمات السابقة ذات الصلة بـ ${esc(unit)} وربطها بالوضعية الجديدة.</p>
+<h3>الكفاءة المستهدفة</h3><p>${esc(competency)}</p>
+<h3>الأهداف التعليمية</h3><ul>${objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+<h3>المكتسبات القبلية</h3><p>${esc(prereq)}</p>
 <h3>الوضعية الانطلاقية والإشكالية</h3><p>يعرض الأستاذ وضعية من المحيط اليومي مرتبطة بـ «${esc(lesson)}»، ثم يطرح سؤالًا إشكاليًا واضحًا ويدعو المتعلمين إلى التعبير عن أفكارهم واقتراح فرضيات.</p>
-<h3>سير الحصة</h3><ol><li><b>التمهيد:</b> استحضار المكتسبات القبلية وطرح الإشكالية.</li><li><b>بناء التعلمات:</b> ملاحظة المعطيات، اقتراح الفرضيات، استغلال الوثائق أو التجربة، ثم مناقشة النتائج.</li>${practical?'<li><b>النشاط التجريبي:</b> تحديد الأدوات والتجهيزات، تنفيذ المناولة، تسجيل الملاحظات، استغلال النتائج واستخلاص النتيجة.</li>':''}<li><b>التثبيت:</b> صياغة المفهوم أو القاعدة أو القانون المناسب.</li><li><b>التطبيق:</b> تمرين أو وضعية قصيرة لتوظيف التعلمات.</li><li><b>التقويم:</b> أسئلة سريعة للتحقق من مدى تحقق الأهداف.</li></ol>
+<h3>سير الحصة</h3><ol><li><b>التمهيد:</b> استحضار المكتسبات القبلية وطرح الإشكالية.</li><li><b>بناء التعلمات:</b> ملاحظة المعطيات، اقتراح الفرضيات، استغلال الوثائق أو التجربة، ثم مناقشة النتائج.</li><li><b>النشاط / التجربة المقترحة:</b> ${esc(activity)}</li><li><b>التثبيت:</b> صياغة المفهوم أو القاعدة أو القانون المناسب.</li><li><b>التطبيق:</b> تمرين أو وضعية قصيرة لتوظيف التعلمات.</li><li><b>التقويم:</b> أسئلة سريعة للتحقق من مدى تحقق الأهداف.</li></ol>
 <h3>الوسائل التعليمية</h3><p>${practical?"تجهيزات النشاط التجريبي المناسبة، أدوات القياس، أسلاك/مصدر كهربائي عند الحاجة، الكتاب المدرسي والسبورة.":"الكتاب المدرسي، السبورة، وثائق أو صور توضيحية، وتجهيزات النشاط عند الحاجة."}</p>
 <h3>التقويم التكويني</h3><p>أسئلة شفوية قصيرة، ملاحظة مشاركة المتعلمين، تصحيح جماعي، وتمرين تطبيقي قصير مرتبط بالدرس.</p>
 <h3>المعالجة والدعم</h3><p>إعادة شرح المفهوم باستعمال مثال بسيط، توجيه المتعلمين المتعثرين إلى الخطوات الأساسية، ثم تقديم تمرين متدرج من السهل إلى الأصعب.</p>
 <h3>الخلاصة</h3><p>صياغة خلاصة جماعية مختصرة تتضمن التعريفات أو القوانين أو النتائج الأساسية، ثم تثبيتها في كراس المتعلم.</p>
-<h3>الواجب المنزلي</h3><p>إنجاز تمرين تطبيقي مرتبط بالتعلمات المكتسبة مع مراجعة الخلاصة.</p>${extra?`<h3>تعليمات خاصة للأستاذ</h3><p>${esc(extra)}</p>`:""}<p style="margin-top:25px;text-align:left"><small>مذكرتي AI — V3 تجريبية</small></p>`;
+<h3>الواجب المنزلي</h3><p>إنجاز تمرين تطبيقي مرتبط بالتعلمات المكتسبة مع مراجعة الخلاصة.</p>${extra?`<h3>تعليمات خاصة للأستاذ</h3><p>${esc(extra)}</p>`:""}<p style="margin-top:25px;text-align:left"><small>مذكرتي AI — V4 تجريبية</small></p>`;
 hideAll();$("result").classList.remove("hidden")}
-function save(){let a=JSON.parse(localStorage.getItem("m3")||"[]");a.unshift({...current,html:$("note").innerHTML,dateSaved:new Date().toLocaleString("ar-DZ")});localStorage.setItem("m3",JSON.stringify(a.slice(0,50)));alert("تم حفظ المذكرة ✅")}
-function showSaved(){hideAll();$("saved").classList.remove("hidden");let a=JSON.parse(localStorage.getItem("m3")||"[]");$("list").innerHTML=a.length?a.map((n,i)=>`<div class="card"><b>${esc(n.lesson)}</b><div class="small">${esc(n.level)} — ${esc(n.className)} — ${esc(n.dateSaved)}</div><button class="secondary" style="margin-top:9px" onclick="openSaved(${i})">فتح المذكرة</button></div>`).join(""):'<div class="card" style="text-align:center">لا توجد مذكرات محفوظة.</div>'}
-function openSaved(i){let a=JSON.parse(localStorage.getItem("m3")||"[]");$("note").innerHTML=a[i].html;current=a[i];hideAll();$("result").classList.remove("hidden")}
+function save(){let a=JSON.parse(localStorage.getItem("m4")||"[]");a.unshift({...current,html:$("note").innerHTML,dateSaved:new Date().toLocaleString("ar-DZ")});localStorage.setItem("m4",JSON.stringify(a.slice(0,50)));alert("تم حفظ المذكرة ✅")}
+function showSaved(){hideAll();$("saved").classList.remove("hidden");let a=JSON.parse(localStorage.getItem("m4")||"[]");$("list").innerHTML=a.length?a.map((n,i)=>`<div class="card"><b>${esc(n.lesson)}</b><div class="small">${esc(n.level)} — ${esc(n.className)} — ${esc(n.dateSaved)}</div><button class="secondary" style="margin-top:9px" onclick="openSaved(${i})">فتح المذكرة</button></div>`).join(""):'<div class="card" style="text-align:center">لا توجد مذكرات محفوظة.</div>'}
+function openSaved(i){let a=JSON.parse(localStorage.getItem("m4")||"[]");$("note").innerHTML=a[i].html;current=a[i];hideAll();$("result").classList.remove("hidden")}
 </script></body></html>
