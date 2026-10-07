@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1769d1"><title>مذكرتي AI V2</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#14213d;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}.app{max-width:520px;margin:auto;min-height:100vh;background:#f7f9fc}
+.top{background:linear-gradient(135deg,#0d4f9e,#237be5);color:#fff;padding:20px 18px 24px;border-radius:0 0 28px 28px}.brand{display:flex;gap:11px;align-items:center}.logo{width:48px;height:48px;background:white;color:#1769d1;border-radius:15px;display:grid;place-items:center;font-size:25px}.brand h1{margin:0;font-size:22px}.brand small{opacity:.85}.content{padding:18px}.hero,.card{background:#fff;border-radius:20px;padding:17px;box-shadow:0 5px 18px #16345b10;margin-bottom:13px}.hero h2{margin:0 0 7px}.hero p{margin:0;color:#64748b;line-height:1.6;font-size:14px}.primary{width:100%;padding:15px;border:0;border-radius:15px;background:#1769d1;color:#fff;font-weight:800;margin-top:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tile{background:#fff;border:0;border-radius:18px;padding:18px;text-align:right;box-shadow:0 4px 14px #16345b0d}.tile span{font-size:26px}.tile b{display:block;margin-top:8px}.header{background:#1769d1;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px;font-weight:800}.back{background:none;border:0;color:#fff;font-size:25px}.hidden{display:none}label{display:block;font-size:13px;font-weight:800;margin:12px 0 6px;color:#334155}select,input,textarea{width:100%;padding:12px;border:1px solid #dbe4ef;border-radius:12px;background:#fbfdff;font:inherit}textarea{min-height:90px}.info{padding:11px 13px;background:#eef6ff;border-radius:12px;color:#155eac;font-size:13px;line-height:1.6;margin-top:12px}.note{line-height:1.8}.note h2{text-align:center}.note h3{color:#1769d1;border-bottom:1px solid #e3ebf5;padding-bottom:5px;font-size:15px}.note p,.note li{font-size:14px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.secondary{padding:13px;border:0;border-radius:13px;background:#e9f2ff;color:#125db6;font-weight:800}.green{background:#eaf9f1;color:#16804b}.small{font-size:12px;color:#64748b}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{background:#eef4fb;padding:7px 10px;border-radius:20px;font-size:12px}
+@media print{.no-print,.top,.header,.actions{display:none!important}.app{max-width:none}.content{padding:0}.card{box-shadow:none}}
+</style></head>
+<body><div class="app">
+
+<div id="home">
+<div class="top"><div class="brand"><div class="logo">📘</div><div><h1>مذكرتي AI</h1><small>مولّد المذكرات الآلية — V2</small></div></div></div>
+<div class="content">
+<div class="hero"><h2>مذكرة فيزياء جزائرية 🇩🇿</h2><p>اختر المستوى ثم الوحدة والدرس. التطبيق يبني لك مذكرة منظمة قابلة للتعديل والطباعة.</p><button class="primary" onclick="openForm()">✨ إنشاء مذكرة</button></div>
+<div class="grid"><button class="tile" onclick="openForm()"><span>⚡</span><b>توليد سريع</b><small>1AM → 4AM</small></button><button class="tile" onclick="showSaved()"><span>📂</span><b>مذكراتي</b><small>المحفوظة على الجهاز</small></button></div>
+<div class="card" style="margin-top:14px"><b>المسار الجديد</b><div class="chips" style="margin-top:9px"><span class="chip">1 متوسط</span><span class="chip">2 متوسط</span><span class="chip">3 متوسط</span><span class="chip">4 متوسط</span></div></div>
+</div></div>
+
+<div id="form" class="hidden"><div class="header"><button class="back" onclick="goHome()">‹</button> إنشاء مذكرة فيزياء</div><div class="content">
+<div class="card">
+<label>① المستوى</label><select id="level" onchange="loadUnits()"><option value="">اختر المستوى</option><option>1 متوسط</option><option>2 متوسط</option><option>3 متوسط</option><option>4 متوسط</option></select>
+<label>② الوحدة / الميدان</label><select id="unit" onchange="loadLessons()"><option value="">اختر المستوى أولًا</option></select>
+<label>③ الدرس</label><select id="lesson"><option value="">اختر الوحدة أولًا</option></select>
+<div class="row"><div><label>نوع الحصة</label><select id="type"><option>درس</option><option>نشاط تجريبي</option><option>تطبيق</option><option>تقويم</option><option>معالجة</option><option>مراجعة</option></select></div><div><label>المدة</label><select id="duration"><option>1 ساعة</option><option>1 ساعة و30 دقيقة</option><option>ساعتان</option></select></div></div>
+<label>تعليمات خاصة (اختياري)</label><textarea id="extra" placeholder="مثال: أريد التركيز على النشاط التجريبي..."></textarea>
+<div class="info">💡 V2 تستخدم قاعدة دروس مبدئية. سنوسعها تدريجيًا لتشمل البرنامج الكامل لكل مستوى.</div>
+<button class="primary" onclick="generate()">🤖 توليد المذكرة كاملة</button>
+</div></div></div>
+
+<div id="result" class="hidden"><div class="header no-print"><button class="back" onclick="openForm()">‹</button> المذكرة المولدة</div><div class="content">
+<div id="note" class="card note" contenteditable="true"></div>
+<div class="actions no-print"><button class="secondary" onclick="save()">💾 حفظ</button><button class="secondary green" onclick="print()">🖨️ طباعة / PDF</button></div>
+</div></div>
+
+<div id="saved" class="hidden"><div class="header"><button class="back" onclick="goHome()">‹</button> مذكراتي</div><div class="content"><div id="list"></div></div></div>
+</div>
+
+<script>
+const db={
+"1 متوسط":{
+"المادة وخواصها":["حالات المادة","تغيرات الحالة الفيزيائية","قياس الكتلة والحجم","الكثافة"],
+"الضوء":["مصادر الضوء","انتشار الضوء","الظل والظليل"],
+"الكهرباء":["الدارة الكهربائية","الموصلات والعوازل","السلامة الكهربائية"]
+},
+"2 متوسط":{
+"المادة وتحولاتها":["التحول الفيزيائي","التحول الكيميائي","الاحتراق"],
+"الضوء والرؤية":["انتشار الضوء","الأجسام المضيئة والمضيئة بالانعكاس"],
+"الكهرباء":["الدارة الكهربائية","التيار الكهربائي","التوتر الكهربائي"]
+},
+"3 متوسط":{
+"الطاقة":["أشكال الطاقة","تحويلات الطاقة","السلسلة الطاقوية"],
+"الكهرباء":["التيار الكهربائي المستمر","التوتر الكهربائي","قانون أوم","الاستطاعة الكهربائية"],
+"المادة":["الذرة والجزيئات","التحولات الكيميائية","المعادلة الكيميائية"]
+},
+"4 متوسط":{
+"الظواهر الكهربائية":["الدارة الكهربائية","التيار الكهربائي والتوتر الكهربائي","الربط على التوالي والتوازي","قانون أوم"],
+"المادة وتحولاتها":["التحول الكيميائي","المعادلة الكيميائية","الاحتراق","حفظ الذرات"],
+"الطاقة":["الاستطاعة الكهربائية","الطاقة الكهربائية","الاستهلاك الكهربائي"]
+}};
+let current={};
+const $=id=>document.getElementById(id);
+function hideAll(){["home","form","result","saved"].forEach(x=>$(x).classList.add("hidden"))}
+function goHome(){hideAll();$("home").classList.remove("hidden")}
+function openForm(){hideAll();$("form").classList.remove("hidden")}
+function loadUnits(){let l=$("level").value,u=$("unit");u.innerHTML='<option value="">اختر الوحدة</option>';if(db[l])Object.keys(db[l]).forEach(x=>u.add(new Option(x,x)));$("lesson").innerHTML='<option>اختر الوحدة أولًا</option>'}
+function loadLessons(){let l=$("level").value,u=$("unit").value,s=$("lesson");s.innerHTML='<option value="">اختر الدرس</option>';if(db[l]?.[u])db[l][u].forEach(x=>s.add(new Option(x,x)))}
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function generate(){
+let level=$("level").value,unit=$("unit").value,lesson=$("lesson").value,type=$("type").value,duration=$("duration").value,extra=$("extra").value;
+if(!level||!unit||!lesson){alert("اختر المستوى والوحدة والدرس أولًا.");return}
+current={level,unit,lesson,type,duration,extra};
+let practical=lesson.includes("دارة")||lesson.includes("أوم")||lesson.includes("تجري");
+$("note").innerHTML=`<div style="text-align:center"><b>الجمهورية الجزائرية الديمقراطية الشعبية</b><br><b>وزارة التربية الوطنية</b><hr><h2>مذكرة تربوية في العلوم الفيزيائية</h2></div>
+<p><b>المستوى:</b> ${esc(level)}　 <b>المدة:</b> ${esc(duration)}</p><p><b>الميدان/الوحدة:</b> ${esc(unit)}<br><b>الدرس:</b> ${esc(lesson)}<br><b>نوع الحصة:</b> ${esc(type)}</p>
+<h3>الكفاءة المستهدفة</h3><p>توظيف المعارف والمفاهيم الفيزيائية المرتبطة بـ «${esc(lesson)}» في تفسير الظواهر وحل وضعيات بسيطة، مع احترام خطوات المنهج العلمي.</p>
+<h3>الأهداف التعليمية</h3><ul><li>تحديد المفاهيم والعناصر الأساسية للدرس.</li><li>صياغة الملاحظات والنتائج بصورة علمية.</li><li>توظيف التعلمات في وضعيات تطبيقية.</li><li>تنمية مهارات الملاحظة والتفسير والاستنتاج.</li></ul>
+<h3>المكتسبات القبلية</h3><p>استرجاع التعلمات السابقة ذات الصلة بـ ${esc(unit)} وربطها بالوضعية الجديدة.</p>
+<h3>الوضعية الانطلاقية</h3><p>يعرض الأستاذ وضعية من المحيط اليومي مرتبطة بالدرس، ثم يطرح سؤالًا إشكاليًا ويدعو المتعلمين إلى اقتراح فرضيات.</p>
+<h3>سير الحصة</h3><ol><li><b>التمهيد:</b> استحضار المكتسبات القبلية وطرح الإشكالية.</li><li><b>بناء التعلمات:</b> ملاحظة، طرح فرضيات، استغلال الوثائق أو التجربة، ثم مناقشة النتائج.</li>${practical?'<li><b>النشاط التجريبي:</b> تحديد التجهيزات، تنفيذ المناولة، تسجيل الملاحظات واستخلاص النتيجة.</li>':''}<li><b>الاستنتاج:</b> بناء الخلاصة وتثبيت المفهوم أو القانون المناسب.</li><li><b>التطبيق:</b> وضعية أو تمرين قصير للتأكد من توظيف التعلمات.</li><li><b>التقويم:</b> أسئلة سريعة للتحقق من تحقق الأهداف.</li></ol>
+<h3>الوسائل التعليمية</h3><p>${practical?'مولد/بطارية، أسلاك، مصباح، أجهزة القياس أو التجهيزات المناسبة حسب النشاط، إضافة إلى الكتاب المدرسي والسبورة.':'الكتاب المدرسي، السبورة، وثائق وصور توضيحية، وتجهيزات النشاط عند الحاجة.'}</p>
+<h3>الخلاصة</h3><p>صياغة خلاصة قصيرة مع المتعلمين تتضمن التعريفات أو القوانين أو النتائج الأساسية للدرس.</p>
+<h3>الواجب المنزلي</h3><p>إنجاز تمرين تطبيقي مرتبط بالتعلمات المكتسبة مع إعادة قراءة الخلاصة.</p>
+${extra?`<h3>تعليمات خاصة للأستاذ</h3><p>${esc(extra)}</p>`:""}
+<p style="margin-top:25px;text-align:left"><small>مذكرتي AI — V2 تجريبية</small></p>`;
+hideAll();$("result").classList.remove("hidden")
+}
+function save(){let a=JSON.parse(localStorage.getItem("m2")||"[]");a.unshift({...current,html:$("note").innerHTML,date:new Date().toLocaleString("ar-DZ")});localStorage.setItem("m2",JSON.stringify(a.slice(0,50)));alert("تم حفظ المذكرة ✅")}
+function showSaved(){hideAll();$("saved").classList.remove("hidden");let a=JSON.parse(localStorage.getItem("m2")||"[]");$("list").innerHTML=a.length?a.map((n,i)=>`<div class="card"><b>${esc(n.lesson)}</b><div class="small">${esc(n.level)} — ${esc(n.date)}</div><button class="secondary" style="margin-top:9px" onclick="openSaved(${i})">فتح المذكرة</button></div>`).join(""):'<div class="card" style="text-align:center">لا توجد مذكرات محفوظة.</div>'}
+function openSaved(i){let a=JSON.parse(localStorage.getItem("m2")||"[]");$("note").innerHTML=a[i].html;current=a[i];hideAll();$("result").classList.remove("hidden")}
+</script></body></html>
